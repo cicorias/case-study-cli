@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     tag_version = require('gulp-tag-version');
 
 var paths = {
-    scripts: ['*.js', 'lib/*.js'],
+    scripts: ['*.js', 'lib/*.js', 'bin/*.js'],
 };
 
 function inc(importance) {
@@ -30,4 +30,4 @@ gulp.task('watch', function () {
     gulp.watch(paths.scripts, ["lint"]);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['lint', 'watch']);
